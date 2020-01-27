@@ -105,7 +105,7 @@
                             </div>
 
 
-                            <div class="col-md-12">
+                            <div class="col-md-12 table-responsive">
 
                             <table id="table_entries" class="table table-responsive table-condensed table-bordered table-hover">
                                 <thead>
