@@ -3,8 +3,8 @@
     require_once('config/functions.php');     
     require_once('config/session.php'); 
 
-    echo $total_entries = getRaw("SELECT COUNT(*) FROM `entries` WHERE id = '5' ");
-    exit;
+    $total_entries = getRaw("SELECT COUNT(*) as total_entries FROM `entries` ");
+    $total_entries = $total_entries[0]['total_entries'];
 
 ?>
 
@@ -60,7 +60,7 @@
                                     <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
                                     <div class="wigdet-one-content">
                                         <p class="m-0 text-uppercase font-600 font-secondary text-overflow text-center" title="Statistics">Total Entries</p>
-                                        <h2 class="text-center">N/A</h2>
+                                        <h2 class="text-center"><?php echo $total_entries; ?></h2>
                                     </div>
                                 </div>
                             </div>
