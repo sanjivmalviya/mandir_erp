@@ -3,21 +3,11 @@ session_start();
 date_default_timezone_set('Asia/Kolkata');
 $timestamp = date('Y-m-d h:i:s');
 
+require_once('config.php');
 // $baseurl = $_SERVER['SERVER_NAME']."/";
 // define('ROOT',$baseurl);
 
 // database connection
-function connect(){
-
-	$host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $db = 'qocept_mandir';
-
-    $connect = mysqli_connect($host,$user,$password,$db);
-
-    return $connect;
-}
 
 function last_id($table,$field_name){
 
@@ -686,49 +676,29 @@ $rettxt .= " ".$ones[substr($decnum,1,1)];
 return $rettxt;
 }
 
-/*-----------------------*/
-/* CUSTOM ARRAY SECTION  */
-/*-----------------------*/
+function convertEnglishNumberToHindiNumber($english_str){
 
-$mediums = array(
-    '1' => 'Gujarati',
-    '2' => 'English'
-);
+    $hindi_numbers = array(
+        "0" => "०",
+        "1" => "१",
+        "2" => "२",
+        "3" => "३",
+        "4" => "४",
+        "5" => "५",
+        "6" => "६",
+        "7" => "७",
+        "8" => "८",
+        "9" => "९");
 
-$streams = array(
-    '1' => 'Commerce',
-    '2' => 'Science'
-);
+    $english_str = str_split($english_str);
+    $hindi_str = "";
+    foreach($english_str as $c){    
+        if(is_numeric($c)){
+            $hindi_str .= $hindi_numbers[$c]; 
+        }else{
+            $hindi_str .= $c;
+        }       
+    }
 
-$standards = array(
-    '13' => 'Jr. Kg',
-    '14' => 'Sr. Kg',
-    '1' => '1',
-    '2' => '2',
-    '3' => '3',
-    '4' => '4',
-    '5' => '5',
-    '6' => '6',
-    '7' => '7',
-    '8' => '8',
-    '9' => '9',
-    '10' => '10',
-    '11' => '11',
-    '12' => '12',
-);
-
-$payment_modes = array(
-    '1' => 'Cash',
-    '2' => 'Cheque'
-);
-
-$teachers = array(
-    'Kunjal Madam',
-    'Alka Madam',
-    'Snehal Madam'
-);
-
-$subjects = array(
-    '1'=>'Maths',
-    '2'=>'Bio',
-);
+    return $hindi_str;
+}

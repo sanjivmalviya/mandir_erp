@@ -103,7 +103,7 @@
                                                 <td class="text-right"><i class="fa fa-rupee"></i> <?php echo $rs['amount']; ?> /-</td>
                                                 <td class="text-center">
                                                     <a href="add_entry.php?edit=<?php echo $rs['id']; ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-                                                    <a href="print.php?edit=<?php echo $rs['id']; ?>" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>
+                                                    <a href="print.php?id=<?php echo $rs['id']; ?>" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>
                                                 </td>
                                             </tr>
 
