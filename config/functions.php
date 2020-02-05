@@ -678,23 +678,35 @@ return $rettxt;
 
 function convertEnglishNumberToHindiNumber($english_str){
 
-    $hindi_numbers = array(
-        "0" => "०",
-        "1" => "१",
+    // $hindi_numbers = array(
+    //     "0" => "०",
+    //     "1" => "१",
+    //     "2" => "२",
+    //     "3" => "३",
+    //     "4" => "४",
+    //     "5" => "५",
+    //     "6" => "६",
+    //     "7" => "७",
+    //     "8" => "८",
+    //     "9" => "९");
+
+     $gujarati_numbers = array(
+        "0" => "૦",
+        "1" => "૧",
         "2" => "२",
-        "3" => "३",
-        "4" => "४",
-        "5" => "५",
-        "6" => "६",
-        "7" => "७",
-        "8" => "८",
-        "9" => "९");
+        "3" => "૩",
+        "4" => "૪",
+        "5" => "૫",
+        "6" => "૬",
+        "7" => "૭",
+        "8" => "૮",
+        "9" => "૯");
 
     $english_str = str_split($english_str);
     $hindi_str = "";
     foreach($english_str as $c){    
         if(is_numeric($c)){
-            $hindi_str .= $hindi_numbers[$c]; 
+            $hindi_str .= $gujarati_numbers[$c]; 
         }else{
             $hindi_str .= $c;
         }       
