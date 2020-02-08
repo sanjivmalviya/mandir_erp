@@ -42,16 +42,19 @@
 <html>
     <?php require_once('include/headerscript.php'); ?>
 
-
     <body class="bg-transparent">
 
         <!-- HOME -->
         <section>
+
+            <div class="container-fluid" style=" background: url('assets/images/front-bg.png'); background-repeat: no-repeat;position: absolute; left: 50px; top: 20px; width: 800px;height: 450px;">
+                
+            </div>
             <div class="container-alt">
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-md-4 col-md-offset-8">
 
-                        <div class="wrapper-page">
+                        <div class="wrapper-page" style="margin-top: 100px;">
 
                             <div class="m-t-40 account-pages">
                                 <div class="text-center account-logo-box">
